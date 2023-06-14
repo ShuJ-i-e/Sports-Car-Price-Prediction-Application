@@ -21,6 +21,7 @@ st.write("""
 This application predicts the **Sports Car** price!
 """)
 ####### Import Data #######
+current_directory = os.getcwd()
 file_name = "Sport car price.csv"
 file_path = os.path.join(current_directory, file_name)
 df=pd.read_csv(file_path)
