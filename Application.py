@@ -1,6 +1,4 @@
 import streamlit as st
-import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
@@ -12,7 +10,6 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.metrics import confusion_matrix
 from sklearn import metrics
-# from scipy.stats.mstats import winsorize
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.linear_model import Ridge
