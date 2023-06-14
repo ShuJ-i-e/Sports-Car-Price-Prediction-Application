@@ -72,7 +72,7 @@ with tab1:
     st.write(df.head(10))
     st.markdown("<p style='font-family: Verdana;'>Statistical Analysis</p>", unsafe_allow_html=True)
     st.write(df.describe())
-
+    st.set_option('deprecation.showPyplotGlobalUse', False)
     st.markdown("<p style='font-family: Verdana;'>Boxplot of Engine Size</p>", unsafe_allow_html=True)
     fig, ax = plt.subplots(figsize=(8, 6))
     sns.boxplot(data=df["EngineSize"], orient="h", ax=ax)
