@@ -20,7 +20,9 @@ st.write("""
 This application predicts the **Sports Car** price!
 """)
 ####### Import Data #######
-df=pd.read_csv('/Sport car price.csv')
+file_name = "Sport car price.csv"
+file_path = os.path.join(current_directory, file_name)
+df=pd.read_csv(file_path)
 
 ####### Data Preprocessing #######
 # Converts data to numeric data, those that could not be parsed to numeric are replaced with null value
