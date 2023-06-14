@@ -20,7 +20,7 @@ st.write("""
 This application predicts the **Sports Car** price!
 """)
 ####### Import Data #######
-df=pd.read_csv('C:/Users/Acer/OneDrive - ump.edu.my/SEM 5/BCI3333 MACHINE LEARNING APPLICATIONS/Final Assessment/Sport car price.csv')
+df=pd.read_csv('/Sport car price.csv')
 
 ####### Data Preprocessing #######
 # Converts data to numeric data, those that could not be parsed to numeric are replaced with null value
