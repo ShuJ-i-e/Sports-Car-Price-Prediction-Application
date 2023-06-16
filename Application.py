@@ -105,11 +105,11 @@ with tab2:
     st.subheader('Prediction')
     def user_input_features():
         car_make = st.sidebar.slider('Car Make', 0.00, 37.00, 2.0)
-        year = st.sidebar.slider('Year', 1965, 2024, 2022)
-        engine_size = st.sidebar.slider('Engine Size', 0.0, 8.4, 1.3)
-        horsepower = st.sidebar.slider('Horsepower', 150, 10000, 200)
-        torque = st.sidebar.slider('Torque', 151, 7500, 500)
-        mph = st.sidebar.slider('MPH', 2.0, 7.0, 5.0)
+        year = st.sidebar.slider('Year', 1965, 2023, 2022)
+        engine_size = st.sidebar.slider('Engine Size', 1.5, 8.4, 1.3)
+        horsepower = st.sidebar.slider('Horsepower', 181, 1600, 200)
+        torque = st.sidebar.slider('Torque', 151, 1300, 500)
+        mph = st.sidebar.slider('MPH', 2.1, 6.5, 5.0)
         data = {'car_make': car_make,
                 'year': year,
                 'engine_size': engine_size,
