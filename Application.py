@@ -64,6 +64,21 @@ df["Horsepower"] = df["Horsepower"].astype("float")
 df["Torque"] = df["Torque"].astype("float")
 df["MPH"] = df["MPH"].astype("float")
 
+#remove outliers manually
+horsepower_column = df.iloc[:, 3].values.reshape(-1,1)
+index = 0
+for horsepower in horsepower_column:
+    if horsepower==10000:
+        df.drop(index, inplace=True)
+    index+=1
+
+torque_column = df.iloc[:, 4].values.reshape(-1,1)
+index = 0
+for torque in torque_column:
+    if torque==10000:
+        df.drop(index, inplace=True)
+    index+=1
+    
 tab1, tab2, tab3 = st.tabs(["Exploratory Data Analysis", "Prediction", "Performance Evaluation"])
 
 with tab1:
@@ -73,22 +88,6 @@ with tab1:
     st.markdown("<p style='font-family: Verdana;'>Statistical Analysis</p>", unsafe_allow_html=True)
     st.write(df.describe())
     st.set_option('deprecation.showPyplotGlobalUse', False)
-    st.markdown("<p style='font-family: Verdana;'>Boxplot of Engine Size</p>", unsafe_allow_html=True)
-    fig, ax = plt.subplots(figsize=(8, 6))
-    sns.boxplot(data=df["EngineSize"], orient="h", ax=ax)
-    ax.set_title("Boxplot of Engine Size")
-    # plt.ylim(plt.ylim()[::-1])
-    st.pyplot(fig)
-
-    st.markdown("<p style='font-family: Verdana;'>Histogram of MPH</p>", unsafe_allow_html=True)
-    data = df["MPH"]
-    plt.hist(data, bins=5, edgecolor='black')
-    plt.xlabel('Values')
-    plt.ylabel('Frequency')
-    plt.title('Histogram of MPH')
-    plt.ylim(plt.ylim()[::-1])
-    st.pyplot()
-
 
 with tab2:
     st.subheader('Prediction')
