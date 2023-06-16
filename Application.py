@@ -68,7 +68,7 @@ df["MPH"] = df["MPH"].astype("float")
 enginesize_column = df.iloc[:, 2].values.reshape(-1,1)
 index = 0
 for engine in enginesize_column:
-    if engine==0 or engine>=8:
+    if engine==0:
         df.drop(index, inplace=True)
     index+=1
 
@@ -85,14 +85,6 @@ for torque in torque_column:
     if torque==10000:
         df.drop(index, inplace=True)
     index+=1
-    
-mph_column = df.iloc[:, 5].values.reshape(-1,1)
-index = 0
-for mph in mph_column:
-    if mph>6:
-        df.drop(index, inplace=True)
-    index+=1
-
 df.reset_index(drop=True, inplace=True)
 
 
