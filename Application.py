@@ -65,6 +65,13 @@ df["Torque"] = df["Torque"].astype("float")
 df["MPH"] = df["MPH"].astype("float")
 
 #remove outliers manually
+enginesize_column = df.iloc[:, 2].values.reshape(-1,1)
+index = 0
+for engine in enginesize_column:
+    if engine==0:
+        df.drop(index, inplace=True)
+    index+=1
+
 horsepower_column = df.iloc[:, 3].values.reshape(-1,1)
 index = 0
 for horsepower in horsepower_column:
@@ -78,6 +85,9 @@ for torque in torque_column:
     if torque==10000:
         df.drop(index, inplace=True)
     index+=1
+
+#reset index
+df.reset_index(drop=True, inplace=True)
     
 tab1, tab2, tab3 = st.tabs(["Exploratory Data Analysis", "Prediction", "Performance Evaluation"])
 
